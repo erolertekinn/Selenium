@@ -9,17 +9,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
-public class LiveDemo {
+public class SearchingVegetablesInTheTable_15 {
 
 	public static void main(String[] args) throws InterruptedException {
 
 // TODO Auto-generated method stub
 
-		System.setProperty("webdriver.chrome.driver", "C://chromedriver.exe");
-		
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\erole\\Masaüstü\\Eclipse Workspace\\Chrome-Driver\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
-		driver.get("https://rahulshettyacademy.com/greenkart/#/offers");
+		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
 
 // click on column
 

@@ -14,14 +14,14 @@ public class Assignment_01 {
 		WebDriver driver = new ChromeDriver();
 
 		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
-		
+
 		driver.findElement(By.id("checkBoxOption1")).click();
 // xpath'de parent'dan child'a giderken araya / koyuyoruz	
-		List<WebElement> a= driver.findElements(By.xpath("//div[@id='checkbox-example']/fieldset/label"));
+		List<WebElement> a = driver.findElements(By.xpath("//div[@id='checkbox-example']/fieldset/label"));
 //css'de parent'dan child'a giderken araya bosluk koyuyoruz		
-		List<WebElement> b= driver.findElements(By.cssSelector("div[id='checkbox-example'] label"));
-		System.out.println(a.size());
-		System.out.println(b.size());
+		List<WebElement> b = driver.findElements(By.cssSelector("div[id='checkbox-example'] label"));
+		System.out.println(a.size()); // number of the checkbox
+		System.out.println(b.size()); // number of the checkbox
 	}
 
 }

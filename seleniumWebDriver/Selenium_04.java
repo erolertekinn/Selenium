@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Selenium_04 {
 
 	public static void main(String[] args) {
-
+		
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\Users\\erole\\Masaüstü\\Eclipse Workspace\\Chrome-Driver\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();

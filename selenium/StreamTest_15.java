@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 
 import org.testng.annotations.Test;
 
-public class StreamTest {
+public class StreamTest_15 {
 
 // Count the number of names starting with alphabet A in the List
 
