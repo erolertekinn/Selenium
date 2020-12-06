@@ -14,7 +14,7 @@ public class base {
 
 	public static void main(String[] args) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\erole\\Masaüstü\\Eclipse Workspace\\Chrome-Driver\\chromedriver.exe");
+				"C:\\Users\\erole\\Masaüstü\\Eclipse Workspace\\Selenium Libraries\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.java.com./tr/");
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);

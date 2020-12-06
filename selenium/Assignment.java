@@ -10,8 +10,8 @@ public class Assignment {
 
 		String text = "Rahul";
 
-		System.setProperty("webdriver.chrome.driver", "C://chromedriver.exe");
-
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\erole\\Masaüstü\\Eclipse Workspace\\Selenium Libraries\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
 		driver.get("https://rahulshettyacademy.com/AutomationPractice/");

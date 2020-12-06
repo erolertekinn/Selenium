@@ -16,7 +16,7 @@ public class SearchingVegetablesInTheTable_15 {
 // TODO Auto-generated method stub
 
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\erole\\Masaüstü\\Eclipse Workspace\\Chrome-Driver\\chromedriver.exe");
+				"C:\\Users\\erole\\Masaüstü\\Eclipse Workspace\\Selenium Libraries\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
 		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");

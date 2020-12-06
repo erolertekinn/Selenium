@@ -18,8 +18,7 @@ public class exercise {
 	public static void main(String[] args) {
 
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\erole\\Masaüstü\\Eclipse Workspace\\Chrome-Driver\\chromedriver.exe");
-
+				"C:\\Users\\erole\\Masaüstü\\Eclipse Workspace\\Selenium Libraries\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://accounts.google.com/signup");
 

@@ -16,8 +16,7 @@ public class FluentWaitTest2 {
 	// for its presence once every 5 seconds.
 	public static void main(String[] args) {
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\erole\\Masaüstü\\Eclipse Workspace\\Chrome-Driver\\chromedriver.exe");
-		// WebDriver interface of ChromeDriver
+				"C:\\Users\\erole\\Masaüstü\\Eclipse Workspace\\Selenium Libraries\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://the-internet.herokuapp.com//dynamic_loading/1");
 		driver.findElement(By.cssSelector("[id='start'] button")).click();

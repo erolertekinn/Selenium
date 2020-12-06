@@ -20,9 +20,9 @@ public static void main(String[] args) throws InterruptedException {
 
 // TODO Auto-generated method stub
 
-System.setProperty("webdriver.chrome.driver", "C://chromedriver.exe");
-
-WebDriver driver = new ChromeDriver();
+	System.setProperty("webdriver.chrome.driver",
+			"C:\\Users\\erole\\Masaüstü\\Eclipse Workspace\\Selenium Libraries\\chromedriver.exe");
+	WebDriver driver = new ChromeDriver();
 
 driver.get("https://rahulshettyacademy.com/greenkart/#/offers");
 

@@ -17,8 +17,7 @@ public class Scope {
 // 2. Count of footer section----Footerdaki link sayisi
 
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\erole\\Masaüstü\\Eclipse Workspace\\Chrome-Driver\\chromedriver.exe");
-
+				"C:\\Users\\erole\\Masaüstü\\Eclipse Workspace\\Selenium Libraries\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
 		driver.get("http://qaclickacademy.com/practice.php");

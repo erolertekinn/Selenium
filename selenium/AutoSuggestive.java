@@ -10,8 +10,9 @@ public class AutoSuggestive {
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\erole\\Masaüstü\\Eclipse Workspace\\Chrome-Driver\\chromedriver.exe");
-		WebDriver driver =new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\erole\\Masaüstü\\Eclipse Workspace\\Selenium Libraries\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.makemytrip.com/"); //URL in the browser
 		WebElement source=driver.findElement(By.id("hp-widget__sfrom"));
 		source.clear();

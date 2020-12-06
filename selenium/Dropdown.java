@@ -10,7 +10,7 @@ public class Dropdown {
 // TODO Auto-generated method stub
 
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\erole\\Masaüstü\\Eclipse Workspace\\Chrome-Driver\\chromedriver.exe");
+				"C:\\Users\\erole\\Masaüstü\\Eclipse Workspace\\Selenium Libraries\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
 		driver.get("http://spicejet.com"); // URL in the browser

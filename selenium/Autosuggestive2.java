@@ -12,8 +12,9 @@ public class Autosuggestive2 {
 
 	public static void main(String[] args) throws InterruptedException {
 // TODO Auto-generated method stub
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\erole\\Masaüstü\\Eclipse Workspace\\Chrome-Driver\\chromedriver.exe");
-		WebDriver driver =new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\erole\\Masaüstü\\Eclipse Workspace\\Selenium Libraries\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
 
 		driver.get("https://www.ksrtc.in");
 		driver.findElement(By.xpath("//input[@id='fromPlaceName']")).sendKeys("BENG");
