@@ -1,0 +1,75 @@
+'################################################
+' http://www.GlobalETraining.com
+' VB Scripting for Automation Professionals
+' Course Material
+'################################################
+ 'Const  siteTitle = "GlobalETraining.com"
+'################################################
+'    
+' NOTE : Update variables and paths to match your learning environment
+'
+
+' Create a Folder - Snippet
+'################################################
+Function CreateFolder(fullPathToTheFolder)
+	Dim objFSO, objFolder
+	Set objFSO = CreateObject("Scripting.FileSystemObject")
+	Set objFolder = objFSO.CreateFolder(fullPathToTheFolder)
+End Function
+
+
+' Delete a Folder - Snippet
+'################################################
+Function DeleteFolder(fullPathToTheFolder)
+	Set oFSO = CreateObject("Scripting.FileSystemObject")
+	oFSO.DeleteFolder(fullPathToTheFolder)
+End Function
+
+' Copy Folder - Snippet
+'################################################
+Function CopyFolder(sourceFolderPath, targetFolderPath)
+	Set oFSO=createobject("Scripting.Filesystemobject")
+	oFSO.CopyFolder sourceFolderPath, targetFolderPath, True
+End Function
+
+' Checking the existence of a folder
+'################################################
+Function CreateFolderIfNotFound(fullPathToTheFolder)
+	Dim objFSO, objFolder, strDirectory
+	strDirectory = fullPathToTheFolder
+	Set objFSO = CreateObject("Scripting.FileSystemObject")
+	
+	If objFSO.FolderExists(strDirectory) Then
+		Set objFolder = objFSO.GetFolder(strDirectory)
+		'msgbox strDirectory & " exists! "
+	else
+		Set objFolder = objFSO.CreateFolder(strDirectory)
+	end if
+End Function
+
+
+
+' Creating a file
+'################################################
+Function CreateFile(pathToFile)
+
+	Set objFSO = CreateObject("Scripting.FileSystemObject")
+
+	Set objFile = objFSO.CreateTextFile(pathToFile) 
+End Function
+
+' Appending to file
+'################################################
+Function AppendToFile(dirPath, fileName, lineToAdd)
+	Dim dateStamp, timeStamp, pathToFile
+	pathToFile = dirPath & "\" & fileName
+	dateStamp = Date
+	timeStamp = Time
+	
+	data = dateStamp & " " & timeStamp & " : " & lineToAdd
+	
+	Set myFSO = CreateObject("Scripting.FileSystemObject")
+	Set WriteStuff = myFSO.OpenTextFile(pathToFile, 8, True)
+	WriteStuff.WriteLine(data)
+	WriteStuff.Close
+End Function
