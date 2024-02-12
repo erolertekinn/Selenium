@@ -1,0 +1,50 @@
+
+Function PreProcessor
+	'Pre-processor
+	PrintMyMessage actionname, "Function not yet developed"
+End Function
+
+
+
+Function PostProcessor
+	'Post-processor
+	PrintMyMessage actionname, "Function not yet developed"
+End Function
+
+Function StartApplication
+	'Pre-processor
+	SystemUtil.Run "C:\Program Files (x86)\HP\Unified Functional Testing\samples\flight\app\flight4a.exe"
+	actionname = Environment.Value("ActionName")
+	
+	PrintMyMessage actionname, "================================================"
+End Function
+
+Function Login
+	Dialog("Login").WinEdit("Agent Name:").Set "parul"
+	Dialog("Login").WinEdit("Password:").SetSecure "5468a8e9987ab39837207a1b9155fa095e2b4a6d"
+	Dialog("Login").WinButton("OK").Click
+	
+	PrintMyMessage actionname, "Clicked OK button on the login screen"
+End Function
+
+
+Function CloseApplication
+	'Close the app
+	Window("Flight Reservation").WinMenu("Menu").Select "File;Exit"
+	PrintMyMessage actionname, "Exited the application"
+	
+	PrintMyMessage actionname, "Exited the application"
+End Function
+
+Function BookTicket
+	'Book Ticket
+	Window("Flight Reservation").ActiveX("MaskEdBox").Type "122014"
+	Window("Flight Reservation").WinComboBox("Fly From:").Select "Denver"
+	Window("Flight Reservation").WinComboBox("Fly To:").Select "Frankfurt"
+	Window("Flight Reservation").WinButton("FLIGHT").Click
+	Window("Flight Reservation").Dialog("Flights Table").WinButton("OK").Click
+	Window("Flight Reservation").WinEdit("Name:").Set "parul"
+	Window("Flight Reservation").WinButton("Insert Order").Click
+	
+	PrintMyMessage actionname, "Clicked INSERT button on the reservation screen"
+End Function
