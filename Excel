@@ -1,0 +1,150 @@
+'#######################################################################################
+'
+' http://www.GlobalETraining.com
+'
+'#######################################################################################
+
+'***********************************************************************************************
+' Function Library - Excel
+'***********************************************************************************************
+
+'Read Specific cell
+Function ReadCellDataFromExcel(pathtoexcel, sheetname, row, cell)
+	Set objExcel = createObject("Excel.Application")
+	Set objWorkbook = objExcel.Workbooks.open(pathtoexcel)
+	Set objSheet = objWorkbook.Worksheets(sheetname)
+	MsgBox objSheet.cells(row,cell)
+	
+	'Destroy excel related objects
+	objWorkbook.Close
+	objExcel.Quit
+	
+	Set objSheet = nothing
+	Set objWorkbook = nothing
+	Set objExcel = nothing
+End Function	
+
+Function ReadAllDataFromExcel(pathtoexcel, sheetname)
+	Set objExcel = createObject("Excel.Application")
+	Set objWorkbook = objExcel.Workbooks.open(pathtoexcel)
+	Set objSheet = objWorkbook.Worksheets(sheetname)
+	
+	For row = 1 To objSheet.usedrange.rows.count Step 1
+		For column = 1 To objSheet.usedrange.columns.count Step 1
+			MsgBox objSheet.cells(row,column)
+		Next
+	Next
+	
+	'Destroy excel related objects
+	objWorkbook.Close
+	objExcel.Quit
+	
+	Set objSheet = nothing
+	Set objWorkbook = nothing
+	Set objExcel = nothing
+End Function
+
+Function CreateExcelDocument(pathtoexceldir)
+	Set objExcel = createObject("Excel.Application")
+
+	'To make Excel visible
+	objExcel.Application.Visible = true 
+	  
+	objExcel.Workbooks.Add
+	
+	strtime = Time '12:11:29 AM
+	strHour = Mid(strtime,1,2)
+	strMinute = Mid(strtime,4,2)
+	strSecond = Mid(strtime,7,2)
+	
+	excelfilename = "Sample10_uft_" & strHour & "_" & strMinute & "_" & strSecond & ".xlsx"
+	print excelfilename
+	fullpath = pathtoexceldir & "\" & excelfilename
+	
+	'Save the Excel file as Sample_uft.xlsx
+	objExcel.ActiveWorkbook.SaveAs(fullpath)
+	
+	objExcel.Quit
+	
+	Set objSheet = nothing
+	Set objWorkbook = nothing
+	Set objExcel = nothing
+End Function
+
+Function CreateExcelDocumentAndAddSampleDate(pathtoexceldir)
+	Set objExcel = createObject("Excel.Application")
+
+	'To make Excel visible
+	objExcel.Application.Visible = true 
+	  
+	objExcel.Workbooks.Add
+	
+	strtime = Time '12:11:29 AM
+	strHour = Mid(strtime,1,2)
+	strMinute = Mid(strtime,4,2)
+	strSecond = Mid(strtime,7,2)
+	
+	excelfilename = "Sample10_uft_" & strHour & "_" & strMinute & "_" & strSecond & ".xlsx"
+	print excelfilename
+	fullpath = pathtoexceldir & "\" & excelfilename
+	
+	'Save the Excel file as Sample_uft.xlsx
+	objExcel.ActiveWorkbook.SaveAs(fullpath)
+	
+	'Select the worksheet
+	set objSheet = objExcel.ActiveWorkbook.Worksheets("Sheet1")
+	
+	'Enter data (Syntax: [Excel Sheet].cells(row,column).Value = "Data"
+	'******************************************************************
+	objSheet.cells(1,1).value ="StudentID"
+	objSheet.cells(1,2).value ="Name"
+	objSheet.cells(1,3).value ="Email Address"
+	objSheet.cells(1,4).value ="Phone Number"
+	objSheet.cells(1,5).value ="Comments"
+	objSheet.cells(2,1).value ="1"
+	objSheet.cells(2,2).value ="John "
+	objSheet.cells(2,3).value ="john@globaletraining.com"
+	objSheet.cells(2,4).value ="732-588-6564"
+	objSheet.cells(2,5).value ="Joined automation course"
+	objSheet.cells(3,1).value ="2"
+	objSheet.cells(3,2).value ="Peter"
+	objSheet.cells(3,3).value ="peter@globaletraining.com"
+	objSheet.cells(3,4).value ="732-588-6564"
+	objSheet.cells(3,5).value ="Joined automation course"
+	
+	'Save
+	objExcel.ActiveWorkbook.Save
+
+	
+	objExcel.Quit
+	
+	Set objSheet = nothing
+	Set objWorkbook = nothing
+	Set objExcel = nothing
+End Function
+
+Function WriteAfterLastLine(pathtoexcel, sheetname)
+	Set objExcel = createObject("Excel.Application")
+	Set objWorkbook = objExcel.Workbooks.open(pathtoexcel)
+	Set objSheet = objWorkbook.Worksheets(sheetname)
+	
+	'To make excel visible
+	objExcel.Application.Visible = true
+	
+	lastRow = objSheet.usedrange.rows.count
+	nextRow = lastRow + 1
+	objSheet.cells(nextRow,1) = "UFT Signature - " & date & "-" & time
+	
+	'Destroy excel related objects
+	objWorkbook.Save
+	objWorkbook.Close
+	objExcel.Quit
+	
+	Set objSheet = nothing
+	Set objWorkbook = nothing
+	Set objExcel = nothing
+End Function
+
+Function ImportDateFromExcel(excelDocPath)
+	DataTable.Import(excelDocPath)
+End Function
