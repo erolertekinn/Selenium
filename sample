@@ -1,0 +1,5 @@
+Function PrintMyMessage(actionname, message)
+	
+	print date & "-" & time & " - " & actionname & " --- " & message 
+	
+End Function
